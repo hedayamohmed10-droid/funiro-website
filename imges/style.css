@@ -1,0 +1,533 @@
+/* ==========================================
+   1. VARIABLES & RESET
+   ========================================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --primary-color: #B88E2F;
+    /* اللون الرئيسي الخشي/الذهبي */
+    --off-white: #FFF3E3;
+    /* اللون السكري للأوف وايت */
+    --black-color: #000000;
+    /* أسود للعنوانين */
+    --grey-color: #9F9F9F;
+    /* رمادي للنصوص الفرعية */
+    --green-badge: #2EC1AC;
+    /* شارة منتج جديد */
+    --red-badge: #E97171;
+    /* شارة الخصم */
+
+    --font-main: 'Poppins', sans-serif;
+    --font-logo: 'Montserrat', sans-serif;
+}
+
+body {
+    font-family: var(--font-main);
+    color: var(--black-color);
+    background-color: #FFFFFF;
+}
+
+.container {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* ==========================================
+   2. NAVBAR
+   ========================================== */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 25px 54px;
+    background-color: #FFFFFF;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.logo img {
+    height: 32px;
+}
+
+.logo-text {
+    font-family: var(--font-logo);
+    font-size: 34px;
+    font-weight: 700;
+}
+
+.nav-links {
+    display: flex;
+    gap: 75px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 500;
+    color: var(--black-color);
+    transition: color 0.3s;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+    color: var(--primary-color);
+}
+
+.nav-icons {
+    display: flex;
+    gap: 45px;
+}
+
+.nav-icons a {
+    color: var(--black-color);
+    font-size: 20px;
+}
+
+/* ==========================================
+   3. HERO SECTION
+   ========================================== */
+.hero {
+    background-size: cover;
+    background-position: center;
+    height: 716px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding-right: 58px;
+}
+
+.hero-card {
+    background-color: var(--off-white);
+    padding: 62px 43px 37px 39px;
+    width: 643px;
+    border-radius: 10px;
+}
+
+.hero-card .sub-title {
+    font-size: 16px;
+    font-weight: 600;
+    letter-spacing: 3px;
+    color: #333333;
+}
+
+.hero-card .main-title {
+    font-size: 52px;
+    font-weight: 700;
+    line-height: 65px;
+    color: var(--primary-color);
+    margin: 10px 0;
+}
+
+.hero-card .hero-text {
+    font-size: 18px;
+    color: #333333;
+    margin-bottom: 40px;
+}
+
+.btn-primary {
+    display: inline-block;
+    background-color: var(--primary-color);
+    color: #FFFFFF;
+    padding: 20px 70px;
+    text-decoration: none;
+    font-weight: 700;
+    border: none;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.btn-primary:hover {
+    background-color: #9c7724;
+}
+
+/* ==========================================
+   4. BROWSE THE RANGE
+   ========================================== */
+.range-section {
+    padding: 60px 0;
+}
+
+.section-header {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.section-header h2 {
+    font-size: 32px;
+    font-weight: 700;
+}
+
+.section-header p {
+    color: var(--grey-color);
+    font-size: 20px;
+}
+
+.range-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.range-card {
+    text-align: center;
+}
+
+.range-card .img-box {
+    border-radius: 10px;
+    overflow: hidden;
+    height: 480px;
+    margin-bottom: 20px;
+}
+
+.range-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.range-card h3 {
+    font-size: 24px;
+    font-weight: 600;
+}
+
+/* ==========================================
+   5. PRODUCTS SECTION
+   ========================================== */
+.products-section {
+    padding: 40px 0 60px;
+}
+
+.products-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 32px;
+}
+
+.product-card {
+    background-color: #F4F5F7;
+    position: relative;
+    overflow: hidden;
+}
+
+.product-card img {
+    width: 100%;
+    height: 301px;
+    object-fit: cover;
+}
+
+.product-info {
+    padding: 16px;
+}
+
+.product-info h4 {
+    font-size: 24px;
+    font-weight: 600;
+}
+
+.product-info p {
+    color: var(--grey-color);
+    margin: 8px 0;
+}
+
+.price-box {
+    display: flex;
+    gap: 16px;
+    align-items: center;
+}
+
+.current-price {
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.old-price {
+    font-size: 16px;
+    color: #B0B0B0;
+    text-decoration: line-through;
+}
+
+.badge {
+    position: absolute;
+    top: 24px;
+    right: 24px;
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.badge.red {
+    background-color: var(--red-badge);
+}
+
+.badge.green {
+    background-color: var(--green-badge);
+}
+
+.btn-center {
+    text-align: center;
+    margin-top: 32px;
+}
+
+.btn-outline {
+    display: inline-block;
+    border: 1px solid var(--primary-color);
+    color: var(--primary-color);
+    padding: 12px 78px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+.btn-outline:hover {
+    background-color: var(--primary-color);
+    color: #FFFFFF;
+}
+
+/* ==========================================
+   6. INSPIRATION SECTION
+   ========================================== */
+.inspiration-section {
+    background-color: var(--off-white);
+    display: flex;
+    align-items: center;
+    padding: 44px 0 44px 100px;
+    gap: 40px;
+    overflow: hidden;
+}
+
+.inspiration-text {
+    flex: 1;
+}
+
+.inspiration-text h2 {
+    font-size: 40px;
+    font-weight: 700;
+    margin-bottom: 8px;
+}
+
+.inspiration-gallery {
+    flex: 2;
+    display: flex;
+    gap: 24px;
+}
+
+.inspire-card {
+    position: relative;
+    width: 370px;
+    height: 580px;
+}
+
+.inspire-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.overlay-box {
+    position: absolute;
+    bottom: 24px;
+    left: 24px;
+    background: rgba(255, 255, 255, 0.72);
+    backdrop-filter: blur(3px);
+    padding: 24px;
+}
+
+/* ==========================================
+   7. GALLERY & FOOTER
+   ========================================== */
+.gallery-section {
+    padding: 60px 0;
+    text-align: center;
+}
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+    margin-top: 30px;
+}
+
+.gallery-grid img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+}
+
+.footer {
+    border-top: 1px solid #D9D9D9;
+    padding: 48px 0 38px;
+}
+
+.footer-container {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 2fr;
+    gap: 30px;
+
+}
+
+.footer-logo {
+    font-family: var(--font-logo);
+    font-size: 24px;
+    margin-bottom: 40px;
+}
+
+.footer-col h4 {
+    color: var(--grey-color);
+    margin-bottom: 40px;
+    font-size: 16px;
+}
+
+.footer-col ul {
+    list-style: none;
+}
+
+.footer-col ul li {
+    margin-bottom: 40px;
+}
+
+.footer-col ul a {
+    text-decoration: none;
+    color: var(--black-color);
+    font-weight: 500;
+}
+
+.newsletter-form {
+    display: flex;
+    gap: 10px;
+}
+
+.newsletter-form input {
+    border: none;
+    border-bottom: 1px solid black;
+    padding: 4px;
+    outline: none;
+}
+
+.newsletter-form button {
+    border: none;
+    border-bottom: 1px solid black;
+    background: transparent;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.footer-bottom {
+    margin-top: 40px;
+    border-top: 1px solid #D9D9D9;
+    padding-top: 35px;
+}
+
+/* ==========================================
+   8. CONTACT PAGE SPECIFIC
+   ========================================== */
+.page-banner {
+    background-size: cover;
+    background-position: center;
+    height: 316px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.banner-logo {
+    width: 60px;
+}
+
+.page-banner h1 {
+    font-size: 48px;
+    font-weight: 500;
+}
+
+.contact-section {
+    padding: 80px 0;
+}
+
+.contact-header {
+    text-align: center;
+    max-width: 644px;
+    margin: 0 auto 80px;
+}
+
+.contact-header h2 {
+    font-size: 36px;
+    font-weight: 600;
+}
+
+.contact-header p {
+    color: var(--grey-color);
+}
+
+.contact-wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+}
+
+.info-item {
+    display: flex;
+    gap: 30px;
+    margin-bottom: 42px;
+}
+
+.info-item i {
+    font-size: 28px;
+}
+
+.form-group {
+    margin-bottom: 36px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 22px;
+    font-weight: 500;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 20px;
+    border: 1px solid var(--grey-color);
+    border-radius: 10px;
+    outline: none;
+}
+
+.features-bar {
+    background-color: var(--off-white);
+    padding: 100px 0;
+}
+
+.features-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+
+.feature-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.feature-item i {
+    font-size: 50px;
+}
